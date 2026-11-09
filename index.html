@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#741f3a">
+<meta name="description" content="Thiệp chúc mừng Ngày Nhà giáo Việt Nam 20/11">
+<title>Thương gửi thầy cô | 20.11</title>
+<style>
+:root{--wine:#741f3a;--rose:#b85c72;--gold:#c49a58;--ink:#49323a;--paper:#fffaf5}
+*{box-sizing:border-box}
+html{min-height:100%;background:#f7eee8;scroll-behavior:smooth}
+body{margin:0;min-height:100svh;padding:clamp(10px,3vw,26px);display:flex;justify-content:center;align-items:flex-start;
+background:radial-gradient(ellipse at 8% 8%,#f4dfe2 0,transparent 38%),radial-gradient(ellipse at 95% 90%,#ead8c2 0,transparent 36%),linear-gradient(145deg,#f9f1e9,#f3e4df);
+color:var(--ink);font-family:Georgia,"Times New Roman",serif}
+.page{width:min(100%,560px);position:relative;overflow:hidden;border:1px solid #d9bd9c;border-radius:28px;background:var(--paper);
+box-shadow:0 18px 55px #54253a20;padding:clamp(20px,5vw,34px) clamp(16px,4.5vw,30px) 23px;text-align:center;margin:auto}
+.page:before,.page:after{content:"";position:absolute;width:145px;height:145px;border:1px solid #d8b98770;border-radius:50%;pointer-events:none}
+.page:before{top:-95px;left:-75px}.page:after{bottom:-100px;right:-70px}
+.topline{font:700 10px/1.4 Arial,sans-serif;letter-spacing:.2em;color:#a47b51}
+.ornament{font-size:29px;line-height:1.3;margin:7px 0 8px}
+h1{font-size:clamp(31px,8vw,43px);line-height:1.1;color:var(--wine);font-weight:normal;margin:0}
+.subtitle{font:13px/1.55 Arial,sans-serif;color:#947c72;margin:11px auto 20px;max-width:330px}
+.rule{height:1px;width:76px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0 auto 22px}
+.section-title{font-size:19px;color:var(--wine);font-weight:normal;margin:0 0 7px}
+.section-note{font:12px/1.5 Arial,sans-serif;color:#927a70;margin:0 auto 14px;max-width:390px}
+.message-card{min-height:195px;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:23px 18px;border-radius:21px;
+background:linear-gradient(145deg,#fffdf9,#fff2eb);border:1px solid #ead7c8;box-shadow:inset 0 0 0 5px #fffaf5}
+.kind{font:700 10px Arial,sans-serif;letter-spacing:.14em;color:#a36d53;margin-bottom:14px}
+#wish{font-size:clamp(18px,4.8vw,22px);line-height:1.58;color:#563640}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:14px}
+button{min-height:50px;border:0;border-radius:15px;padding:11px 9px;font:700 13px/1.3 Arial,sans-serif;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+button:focus-visible{outline:3px solid #c49a58;outline-offset:3px}
+.primary{background:linear-gradient(135deg,#812b49,#641d37);color:white;box-shadow:0 6px 16px #741f3a25}
+.secondary{background:#f2e5df;color:#71384b;border:1px solid #e4cfc4}
+button:active{transform:scale(.985)}
+#textStatus,#voiceStatus{min-height:30px;margin:11px 3px 0;font:12px/1.5 Arial,sans-serif;color:#927a70}
+.counter{font:10px Arial,sans-serif;letter-spacing:.1em;color:#b19a8a;margin-top:6px}
+.section-divider{height:1px;background:linear-gradient(90deg,transparent,#e4cdb8,transparent);margin:25px 0 22px}
+.voice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin-top:15px}
+.voice-card{position:relative;isolation:isolate;overflow:hidden;min-height:142px;border:1px solid #e5cdbd;border-radius:18px;
+display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:13px 8px;
+color:#71384b;background:linear-gradient(145deg,#fffaf4,#f8e8e6);box-shadow:0 5px 14px #54253a0c}
+.voice-card:before{content:"";position:absolute;z-index:-1;width:95px;height:95px;border:1px solid #c49a5860;border-radius:50%;top:-54px;right:-32px}
+.voice-card .flower{font-size:34px;line-height:1.1}
+.voice-card .card-label{font:700 12px Arial,sans-serif;letter-spacing:.08em}
+.voice-card .tap-label{font:11px Arial,sans-serif;color:#9b786d}
+.voice-card[data-theme="2"]{background:linear-gradient(145deg,#fffaf0,#f4e5d5)}
+.voice-card[data-theme="3"]{background:linear-gradient(145deg,#fff9f8,#f4e3ec)}
+.voice-card[data-theme="4"]{background:linear-gradient(145deg,#fffdf6,#f0eadb)}
+.voice-card[data-theme="5"]{background:linear-gradient(145deg,#fff8f3,#f5e5dc)}
+.voice-card.selected{border:2px solid var(--wine);box-shadow:0 0 0 3px #b85c7220,0 7px 18px #54253a12}
+.voice-actions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}
+.voice-actions button{min-height:52px}
+.footer{margin-top:22px;font-size:13px;line-height:1.5;color:#a16e58}
+.footer span{color:#b45a70}
+.small-note{font:11px/1.55 Arial,sans-serif;color:#9a857b;margin:12px auto 0;max-width:420px}
+@media(max-width:380px){
+ body{padding:8px}.page{border-radius:23px;padding:20px 13px 19px}
+ .message-card{min-height:180px;padding:19px 14px}.controls,.voice-actions{gap:7px}
+ button{font-size:12px;padding:10px 7px}.voice-grid{gap:8px}.voice-card{min-height:130px}
+}
+@media(min-width:500px){.voice-card{min-height:150px}}
+@media(prefers-reduced-motion:no-preference){.page{animation:arrive .5s ease-out}@keyframes arrive{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}}
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="topline">20 · 11 &nbsp; | &nbsp; NGÀY NHÀ GIÁO VIỆT NAM</div>
+  <div class="ornament" aria-hidden="true">🌷 ✦ 🌷</div>
+  <h1>Thương gửi<br>thầy cô</h1>
+  <p class="subtitle">Một lời chúc nhỏ, gửi gắm lòng biết ơn thật lớn.</p>
+  <div class="rule"></div>
+
+  <section aria-labelledby="textTitle">
+    <h2 class="section-title" id="textTitle">10 lời chúc bằng chữ</h2>
+    <p class="section-note">Đọc những lời tri ân và chọn nghe giọng đọc nếu muốn.</p>
+    <div class="message-card" aria-live="polite">
+      <div class="kind">✦ LỜI CHÚC TRI ÂN</div>
+      <div id="wish">Đang chọn lời chúc...</div>
+    </div>
+    <div class="controls">
+      <button class="primary" id="listenText" type="button">♫ &nbsp; Nghe lời chúc</button>
+      <button class="secondary" id="nextText" type="button">↻ &nbsp; Lời chúc khác</button>
+    </div>
+    <div id="textStatus" role="status" aria-live="polite">Chạm “Nghe lời chúc” để nghe đọc.</div>
+    <div class="counter" id="counter">01 / 10</div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <section aria-labelledby="voiceTitle">
+    <h2 class="section-title" id="voiceTitle">5 tấm thiệp giọng đọc</h2>
+    <p class="section-note">Chạm vào một tấm thiệp để nghe lời chúc. Nội dung lời chúc được giữ kín, chỉ có giọng đọc.</p>
+    <div class="voice-grid" id="voiceGrid">
+      <button class="voice-card" data-index="0" data-theme="1" type="button" aria-label="Mở thiệp giọng đọc số 1">
+        <span class="flower" aria-hidden="true">🌷</span><span class="card-label">THIỆP 01</span><span class="tap-label">Chạm để nghe ♫</span>
+      </button>
+      <button class="voice-card" data-index="1" data-theme="2" type="button" aria-label="Mở thiệp giọng đọc số 2">
+        <span class="flower" aria-hidden="true">🌼</span><span class="card-label">THIỆP 02</span><span class="tap-label">Chạm để nghe ♫</span>
+      </button>
+      <button class="voice-card" data-index="2" data-theme="3" type="button" aria-label="Mở thiệp giọng đọc số 3">
+        <span class="flower" aria-hidden="true">🌸</span><span class="card-label">THIỆP 03</span><span class="tap-label">Chạm để nghe ♫</span>
+      </button>
+      <button class="voice-card" data-index="3" data-theme="4" type="button" aria-label="Mở thiệp giọng đọc số 4">
+        <span class="flower" aria-hidden="true">💐</span><span class="card-label">THIỆP 04</span><span class="tap-label">Chạm để nghe ♫</span>
+      </button>
+      <button class="voice-card" data-index="4" data-theme="5" type="button" aria-label="Mở thiệp giọng đọc số 5">
+        <span class="flower" aria-hidden="true">🌺</span><span class="card-label">THIỆP 05</span><span class="tap-label">Chạm để nghe ♫</span>
+      </button>
+    </div>
+    <div class="voice-actions">
+      <button class="primary" id="listenVoice" type="button">♫ &nbsp; Nghe lời chúc</button>
+      <button class="secondary" id="stopVoice" type="button">■ &nbsp; Dừng giọng đọc</button>
+    </div>
+    <div id="voiceStatus" role="status" aria-live="polite">Chọn một tấm thiệp phía trên để bắt đầu nghe.</div>
+    <p class="small-note">Giọng đọc phụ thuộc giọng tiếng Việt có sẵn trên điện thoại hoặc trình duyệt. Website ưu tiên giọng có tên gợi ý nữ nếu thiết bị cung cấp, nhưng không thể bảo đảm giống nhau trên mọi máy.</p>
+  </section>
+
+  <div class="footer">Kính chúc thầy cô luôn <span>mạnh khỏe · bình an · hạnh phúc</span></div>
+</main>
+
+<script>
+const textWishes = [
+"Kính chúc thầy cô luôn mạnh khỏe, hạnh phúc và giữ mãi ngọn lửa nhiệt huyết với nghề. Cảm ơn thầy cô đã tận tâm dìu dắt chúng em!",
+"Chúc thầy cô có một ngày 20/11 thật vui vẻ. Mong rằng mỗi ngày đến lớp đều là một ngày ngập tràn tiếng cười!",
+"Cảm ơn thầy cô vì không chỉ dạy chúng em kiến thức mà còn dạy chúng em cách làm người. Chúng em luôn biết ơn thầy cô!",
+"Chúc thầy cô luôn trẻ trung, yêu đời, gặp nhiều may mắn và thành công trên con đường trồng người.",
+"Có những bài học sẽ theo chúng em suốt cuộc đời. Cảm ơn thầy cô vì đã để lại những điều tốt đẹp trong hành trình trưởng thành của chúng em.",
+"Chúc thầy cô luôn có thật nhiều sức khỏe, niềm vui và những thế hệ học trò ngoan, giỏi, thành đạt.",
+"Dù mai này có đi đến đâu, chúng em vẫn luôn nhớ đến những bài học và tình yêu thương mà thầy cô đã dành cho mình.",
+"Nhân ngày 20/11, kính chúc thầy cô vạn sự như ý, gia đình hạnh phúc và sự nghiệp giáo dục ngày càng thành công!",
+"Cảm ơn thầy cô đã kiên nhẫn với những lần chúng em chưa hiểu bài, những lúc mắc lỗi và cả những ngày chúng em chưa thật sự cố gắng.",
+"Một lời cảm ơn có lẽ chưa đủ để nói hết lòng biết ơn. Chúng em kính chúc thầy cô luôn bình an, hạnh phúc và tự hào về những học trò của mình!"
+];
+
+const spokenWishes = [
+"Thầy cô ơi, cảm ơn thầy cô đã luôn yêu thương và kiên nhẫn với chúng em. Chúc thầy cô ngày 20 tháng 11 thật nhiều niềm vui ạ!",
+"Nhân ngày Nhà giáo Việt Nam, chúng em xin gửi đến thầy cô những lời tri ân chân thành nhất. Chúc thầy cô luôn mạnh khỏe và thành công!",
+"Có thể chúng em chưa phải là những học trò hoàn hảo, nhưng chúng em luôn trân trọng những điều thầy cô đã dạy. Chúng em yêu quý thầy cô rất nhiều!",
+"Cảm ơn thầy cô đã thắp sáng con đường tri thức, giúp chúng em tự tin bước đến tương lai. Chúc thầy cô luôn hạnh phúc và bình an!",
+"Món quà lớn nhất chúng em muốn dành tặng thầy cô chính là sự trưởng thành của mình. Chúc thầy cô một mùa 20 tháng 11 thật đáng nhớ!"
+];
+
+let currentTextIndex = 0;
+let currentVoiceIndex = 0;
+let hasSelectedVoiceCard = false;
+
+const $ = id => document.getElementById(id);
+const hasSpeech = 'speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+
+function chooseTextWish() {
+  if (hasSpeech) window.speechSynthesis.cancel();
+  if (textWishes.length > 1) {
+    let next;
+    do { next = Math.floor(Math.random() * textWishes.length); }
+    while (next === currentTextIndex);
+    currentTextIndex = next;
+  }
+  $('wish').textContent = textWishes[currentTextIndex];
+  $('counter').textContent = String(currentTextIndex + 1).padStart(2, '0') + ' / 10';
+  $('textStatus').textContent = 'Bạn đang xem lời chúc ' + (currentTextIndex + 1) + ' trên 10.';
+}
+
+function getVietnameseVoice() {
+  if (!hasSpeech) return null;
+  const voices = window.speechSynthesis.getVoices();
+  const viVoices = voices.filter(v => /^vi([-_]|$)/i.test(v.lang));
+  const preferred = viVoices.find(v => /female|woman|mai|linh|hoai|huyen|thuy|ngoc|google.*vi|vi.*female/i.test(v.name));
+  return preferred || viVoices[0] || null;
+}
+
+function speakText(text, statusElement) {
+  if (!hasSpeech) {
+    statusElement.textContent = 'Thiết bị chưa hỗ trợ giọng đọc. Bạn hãy thử Chrome hoặc Safari phiên bản mới.';
+    return;
+  }
+  window.speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'vi-VN';
+  utterance.rate = 0.88;
+  utterance.pitch = 1.16;
+  utterance.volume = 1;
+  const voice = getVietnameseVoice();
+  if (voice) utterance.voice = voice;
+  utterance.onstart = () => statusElement.textContent = 'Đang phát giọng đọc…';
+  utterance.onend = () => statusElement.textContent = 'Đã đọc xong. Bạn có thể nghe lại bất cứ lúc nào.';
+  utterance.onerror = () => statusElement.textContent = 'Không phát được âm thanh. Hãy kiểm tra âm lượng hoặc thử trình duyệt khác.';
+  window.speechSynthesis.speak(utterance);
+}
+
+function selectVoiceCard(index) {
+  currentVoiceIndex = index;
+  hasSelectedVoiceCard = true;
+  document.querySelectorAll('.voice-card').forEach(card => {
+    const selected = Number(card.dataset.index) === index;
+    card.classList.toggle('selected', selected);
+    card.setAttribute('aria-pressed', selected ? 'true' : 'false');
+  });
+  $('voiceStatus').textContent = 'Đang mở thiệp ' + String(index + 1).padStart(2, '0') + '.';
+  // Việc chạm vào thiệp là thao tác trực tiếp của người dùng, giúp trình duyệt cho phép phát âm thanh.
+  speakText(spokenWishes[index], $('voiceStatus'));
+}
+
+$('listenText').addEventListener('click', () => speakText(textWishes[currentTextIndex], $('textStatus')));
+$('nextText').addEventListener('click', chooseTextWish);
+document.querySelectorAll('.voice-card').forEach(card => {
+  card.addEventListener('click', () => selectVoiceCard(Number(card.dataset.index)));
+});
+$('listenVoice').addEventListener('click', () => {
+  if (!hasSelectedVoiceCard) {
+    $('voiceStatus').textContent = 'Bạn hãy chọn một tấm thiệp trước nhé.';
+    return;
+  }
+  speakText(spokenWishes[currentVoiceIndex], $('voiceStatus'));
+});
+$('stopVoice').addEventListener('click', () => {
+  if (hasSpeech) window.speechSynthesis.cancel();
+  $('voiceStatus').textContent = 'Đã dừng giọng đọc.';
+});
+
+chooseTextWish();
+</script>
+</body>
+</html>
